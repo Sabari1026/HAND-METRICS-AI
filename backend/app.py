@@ -26,7 +26,15 @@ from video_processor import process_video, process_single_frame
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app)  # Keep it open for simple deployment across Render subdomains
+
+@app.route("/")
+def index():
+    return jsonify({
+        "status": "online",
+        "message": "HandMetrics AI Backend is running",
+        "version": "1.0.0"
+    })
 
 SUPABASE_URL = os.getenv("SUPABASE_URL", "")
 SUPABASE_SERVICE_KEY = os.getenv("SUPABASE_SERVICE_KEY", "")
