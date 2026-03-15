@@ -1,9 +1,11 @@
 Flask==3.0.3
 flask-cors==4.0.1
-mediapipe==0.10.14
-opencv-python-headless==4.10.0.84
-numpy==1.26.4
+mediapipe==0.10.9
+opencv-python
+numpy
+pandas
+scikit-learn
+joblib
 supabase==2.5.3
 python-dotenv==1.0.1
 gunicorn==22.0.0
-Werkzeug==3.0.3
